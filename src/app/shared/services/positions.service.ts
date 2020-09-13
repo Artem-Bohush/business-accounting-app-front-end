@@ -11,18 +11,18 @@ export class PositionsService {
   }
 
   fetch(categoryId: string): Observable<Position[]> {
-    return this.http.get<Position[]>(`/api/position/${categoryId}`)
+    return this.http.get<Position[]>(`https://accounting-app-back-end.herokuapp.com/api/position/${categoryId}`)
   }
 
   create(position: Position): Observable<Position> {
-    return this.http.post<Position>('/api/position', position)
+    return this.http.post<Position>('https://accounting-app-back-end.herokuapp.com/api/position', position)
   }
 
   update(position: Position): Observable<Position> {
-    return this.http.patch<Position>(`/api/position/${position._id}`, position)
+    return this.http.patch<Position>(`https://accounting-app-back-end.herokuapp.com/api/position/${position._id}`, position)
   }
 
   delete(position: Position): Observable<Message> {
-    return this.http.delete<Message>(`/api/position/${position._id}`)
+    return this.http.delete<Message>(`https://accounting-app-back-end.herokuapp.com/api/position/${position._id}`)
   }
 }

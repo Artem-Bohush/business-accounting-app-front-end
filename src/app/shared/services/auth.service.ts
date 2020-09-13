@@ -15,11 +15,11 @@ export class AuthService {
   }
 
   register(user: User): Observable<User> {
-    return this.http.post<User>('/api/auth/register', user)
+    return this.http.post<User>('https://accounting-app-back-end.herokuapp.com/api/auth/register', user)
   }
 
   login(user: User): Observable<{token: string}> {
-    return this.http.post<{token: string}>('/api/auth/login', user)
+    return this.http.post<{token: string}>('https://accounting-app-back-end.herokuapp.com/api/auth/login', user)
       .pipe(
         tap(
           ({token}) => {
